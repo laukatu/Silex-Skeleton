@@ -1,0 +1,36 @@
+<?php
+
+use Silex\Provider\MonologServiceProvider;
+use Silex\Provider\WebProfilerServiceProvider;
+
+$app['db.options'] = array(
+		'driver'    => 'pdo_mysql',
+	    'host'      => '',
+	    'dbname'    => '',
+	    'user'      => '',
+	    'password'  => '',
+	    'charset'   => 'utf8');  
+
+$app['twig.path'] = array(__DIR__.'/../View');
+$app['twig.options'] = array('cache' => __DIR__.'/../../../var/cache/twig');
+
+$app['debug'] = true;
+
+$app->register(new MonologServiceProvider(), array(
+    'monolog.logfile' => __DIR__.'/../../../var/logs/silex_dev.log',
+));
+
+$app->register($p = new WebProfilerServiceProvider(), array(
+    'profiler.cache_dir' => __DIR__.'/../../../var/cache/profiler',
+));
+
+if ($app['session']->get('locale')) {
+	$lang = $app['session']->get('locale');
+} else {
+	$lang = "en";	
+}
+
+$app['locale'] = $lang;
+$app['session']->set('locale', $lang);
+
+$app->mount('/_profiler', $p);

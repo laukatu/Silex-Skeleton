@@ -1,0 +1,21 @@
+<?php
+
+$app['db.options'] = array(
+		'driver'    => 'pdo_mysql',
+	    'host'      => '',
+	    'dbname'    => '',
+	    'user'      => '',
+	    'password'  => '',
+	    'charset'   => 'utf8');  
+
+$app['twig.path'] = array(__DIR__.'/../View');
+$app['twig.options'] = array('cache' => __DIR__.'/../../../var/cache/twig');
+
+if ($app['session']->get('locale')) {
+	$lang = $app['session']->get('locale');
+} else {
+	$lang = "en";	
+}
+
+$app['locale'] = $lang;
+$app['session']->set('locale', $lang);
