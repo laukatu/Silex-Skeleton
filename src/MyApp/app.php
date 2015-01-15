@@ -27,10 +27,10 @@ $app['translator'] = $app->extend('translator', function($translator, $app) {
 $app->register(new TwigServiceProvider());
 $app['twig'] = $app->extend('twig', function($twig, $app) {             
     $twig->addFunction(new \Twig_SimpleFunction('asset', function ($asset) use (&$app) {
-        return sprintf($app['request_stack']->getMasterRequest()->getBasepath().'/web/assets/%s', ltrim($asset, '/'));
+        return sprintf($app['request_stack']->getMasterRequest()->getBasepath().'/assets/%s', ltrim($asset, '/'));
     }));
     $twig->addFunction(new \Twig_SimpleFunction('upload', function ($uploaded) use (&$app) {
-        return sprintf($app['request_stack']->getMasterRequest()->getBasepath().'/web/upload/%s', ltrim($uploaded, '/'));
+        return sprintf($app['request_stack']->getMasterRequest()->getBasepath().'/upload/%s', ltrim($uploaded, '/'));
     }));
     return $twig;
 });
