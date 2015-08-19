@@ -12,7 +12,7 @@ $app['db.options'] = array(
 	    'charset'   => 'utf8');  
 
 $app['twig.path'] = array(__DIR__.'/../View');
-$app['twig.options'] = array('cache' => __DIR__.'/../../../var/cache/twig');
+$app['twig.options'] = array('cache' => false);
 
 $app['debug'] = true;
 
