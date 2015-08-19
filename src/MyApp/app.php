@@ -9,12 +9,14 @@ use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 use Silex\Provider\HttpFragmentServiceProvider;
+use Silex\Provider\SecurityServiceProvider;
 
 $app = new Application();
 $app->register(new RoutingServiceProvider());
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new SessionServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
+$app->register(new SecurityServiceProvider());
 
 $app->register(new TranslationServiceProvider(), array('locale_fallbacks' => array('en')));
 $app['translator'] = $app->extend('translator', function($translator, $app) {

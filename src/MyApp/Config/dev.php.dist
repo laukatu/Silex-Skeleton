@@ -11,6 +11,17 @@ $app['db.options'] = array(
 	    'password'  => '',
 	    'charset'   => 'utf8');  
 
+$app['security.firewalls'] = array(
+    'admin' => array(
+        'pattern' => '^/admin/',
+        'http' => true,
+        'users' => array(
+        	// https://gist.github.com/jreinke/3349922
+            'admin' => array('ROLE_ADMIN', '')
+        )
+    )
+);
+
 $app['twig.path'] = array(__DIR__.'/../View');
 $app['twig.options'] = array('cache' => false);
 
