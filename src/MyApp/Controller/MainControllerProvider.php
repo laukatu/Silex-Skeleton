@@ -14,12 +14,12 @@ class MainControllerProvider implements ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-		$app->get('/', function () use ($app) {
+		$controllers->get('/', function () use ($app) {
 		    return $app['twig']->render('index.html.twig', array());
 		})
 		->bind('homepage');									
 
-		$app->get('/lang/{lang}', function($lang) use($app) {
+		$controllers->get('/lang/{lang}', function($lang) use($app) {
 			if ($lang == 'en' || file_exists(__DIR__.'/../Locale/'.$lang.'.yml')) {	
 				$app['session']->set('locale', $lang);		
 			}
