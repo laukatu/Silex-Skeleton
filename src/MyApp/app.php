@@ -2,7 +2,7 @@
 
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
-use Silex\Provider\RoutingServiceProvider;
+use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\SessionServiceProvider;
@@ -12,7 +12,7 @@ use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
 
 $app = new Application();
-$app->register(new RoutingServiceProvider());
+$app->register(new UrlGeneratorServiceProvider());
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new SessionServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
