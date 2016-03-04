@@ -17,7 +17,7 @@ gulp.task('styles', function () {
 
   return gulp.src(sources)
     .pipe(sass({
-      sourceComments: global.isProd ? 'none' : 'map',
+      sourceComments: global.isProd ? false : 'map',
       sourceMap: 'sass',
       outputStyle: global.isProd ? 'compressed' : 'nested'
     }))
