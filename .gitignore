@@ -1,4 +1,6 @@
 /vendor/
+/node_modules/
+web/assets/
 composer.lock
 composer.phar
 src/MyApp/Config/dev.php

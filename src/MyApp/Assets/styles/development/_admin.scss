@@ -1,0 +1,222 @@
+body {
+  background: none !important;
+
+  h1 {
+    font-size: .95em;
+    text-align: center;
+    padding: 1%;
+    background:#000;
+    color:#fff;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index:2;
+  }
+}
+
+header {
+  background:#efefef !important;
+  padding: 5% 0;
+  position: fixed;
+  height: 100%;
+  width: 20%;
+  box-sizing: border-box;
+
+  & > nav {
+    & > ul {
+      & > li {
+        & > a {
+          color:#32373c;
+          text-decoration: none;
+          display: block;
+          padding: 6.6% 18%;
+          border-right:#e7e7e7 solid 5px;
+          transition: all .15s ease-in-out;
+
+          &:hover {
+            border-right:#adadad solid 5px;
+            color:#666;
+          }
+
+          &.actiu {
+            border-right:#ffff00 solid 5px;
+            color:#32373c;
+            background:#fff;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+section {
+  width: 80%;
+  box-sizing: border-box;
+  margin-left: 20%;
+  padding: 5%;
+  font-size:.95em;
+  
+  .radioSelect {
+    
+    padding: 2% 5%;
+    position: relative;
+    display: flex;
+
+    span {
+      display: block;
+      width: 20%;
+      font-weight: bold;
+    }
+
+    .colRight {
+      width: 80%;
+      margin: -1% -2%;
+    }
+
+    label {
+      display: inline-block;
+      padding:1% 2%;
+      width: 100px;
+
+      input {
+        display: inline-block;
+        width: auto;
+      }
+    }
+
+
+  }
+
+  .radioSelect:nth-child(odd),
+  label:nth-child(odd) {
+      background:#efefef;
+  }
+
+  label {
+    display: flex;
+    padding: 2% 5%;
+    position: relative;
+
+    &:hover {
+      &::before {
+        content: '';
+        font-family: 'FontAwesome';
+        display: block;
+        padding: 2%;
+        font-size: 1.2em;
+        position: absolute;
+        right: 0;
+        top:0;
+      }
+    }
+    
+    span {
+      display: block;
+      width: 20%;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 80%;
+      border:0;
+      background: rgba(0,0,0,0);
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1.1em;
+      line-height: 1.3em;
+      outline: none;
+    }
+
+    textarea {
+      height: 150px;
+    }
+  }
+
+  button {
+    padding: 1% 5%;
+    float: right;
+  }
+
+  table {
+
+    width: 100%;
+
+    & > tbody > tr {
+      
+      &.head {
+        font-weight: 700;
+      }
+
+      &:nth-child(odd) {
+        background:#efefef;
+      }
+
+      & > td {
+        padding: 2% 5%;
+
+        & > a {
+          color:#32373c;
+          padding: 8% 12%;
+          border:#b3b3b3 solid 1px;
+          transition: all .15s ease-in-out;
+
+          &.edit {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          &.delete {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-left:0;
+          }
+
+          &:hover {
+            background:#32373c;
+            border-color:#32373c;
+            color:#fff;
+          }
+          
+        }
+      }
+    }
+  }
+}
+
+body.login {
+  background:#ccc !important;
+
+  .formLogin {
+    display: block;
+    width: 25%;
+    margin: 10% auto;
+    text-align: center;
+    background: #fff;
+    padding: 3%;
+    border-top: #ffff00 solid 10px;
+
+    input, textarea, select {
+      box-sizing: border-box;
+      padding: 5%;
+      margin-bottom: 4%;
+      width: 100%;
+      border:0;
+      background: #fff;
+      font-size: 1.3em;
+      line-height: 1.3em;
+      outline: none;
+    }
+
+    button {
+      padding: 3% 10%;
+    }
+    
+    p {
+      padding: 2% 5%;
+      background: #000;
+      color: #fff;
+      margin: 0 0 5% 0;
+    }
+  }
+}
