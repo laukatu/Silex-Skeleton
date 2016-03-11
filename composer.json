@@ -13,7 +13,8 @@
         "symfony/validator": "~2.3",
         "doctrine/dbal": "2.2.*",
         "symfony/yaml": "~2.3",
-        "symfony/security": "~2.3"
+        "symfony/security": "~2.3",
+        "symfony/http-kernel": "^2.8"
     },
     "autoload": {
         "psr-0": { "MyApp": "src/" }
